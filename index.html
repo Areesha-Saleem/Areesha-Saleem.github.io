@@ -222,6 +222,26 @@ footer{border-top:1px solid var(--border);padding:2rem 5rem;display:flex;justify
 footer a{color:var(--teal);text-decoration:none;transition:opacity .2s}
 footer a:hover{opacity:.7}
 
+/* EDUCATION */
+.edu-list{display:flex;flex-direction:column}
+.edu-item{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;padding:2.2rem 0;border-bottom:1px solid var(--border);position:relative}
+.edu-item:first-child{border-top:1px solid var(--border)}
+.edu-item::before{content:'';position:absolute;left:-5rem;top:0;bottom:0;width:2px;background:var(--gradient);transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
+.edu-item:hover::before{transform:scaleY(1)}
+.edu-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);margin-bottom:.3rem}
+.edu-inst{font-size:12px;color:var(--teal);font-weight:600;letter-spacing:.04em}
+.edu-degree{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.edu-detail{font-size:13px;color:var(--text-muted)}
+
+/* ACHIEVEMENTS */
+.achieve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.achieve-card{display:flex;align-items:flex-start;gap:1rem;padding:1.5rem;border:1px solid var(--border);background:var(--navy3);border-radius:8px;transition:border-color .3s,transform .3s,background .3s;position:relative;overflow:hidden}
+.achieve-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.achieve-card:hover{border-color:rgba(0,201,177,.25);transform:translateY(-3px);background:var(--navy4)}
+.achieve-card:hover::before{transform:scaleX(1)}
+.achieve-icon{font-size:1.4rem;flex-shrink:0;margin-top:.1rem}
+.achieve-text{font-size:13px;color:var(--text-muted);line-height:1.6}
+
 /* CANVAS */
 #canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.35}
 
@@ -240,7 +260,7 @@ footer a:hover{opacity:.7}
   .photo-clip::after{height:80px}
   .photo-edge-line{display:none}
   .sec-wrap{padding:5rem 1.5rem}
-  .about-grid,.contact-inner,.exp-item{grid-template-columns:1fr;gap:1.5rem}
+  .about-grid,.contact-inner,.exp-item,.edu-item{grid-template-columns:1fr;gap:1.5rem}
   .hero-scroll{display:none}
   footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem}
   #cursor,#cursor-ring{display:none}
@@ -260,6 +280,7 @@ footer a:hover{opacity:.7}
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -400,6 +421,25 @@ footer a:hover{opacity:.7}
         </ul>
       </div>
     </div>
+    <div class="exp-item reveal d5">
+      <div><div class="exp-date">Prior</div><div class="exp-company">ALIS, IT Dept.</div></div>
+      <div>
+        <div class="exp-role">Project Intern — BrainStromers</div>
+        <ul class="exp-bullets">
+          <li>Social media marketing, client handling, and graphic design.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item reveal d6">
+      <div><div class="exp-date">Prior</div><div class="exp-company">LACAS × SNT Jinnah High School</div></div>
+      <div>
+        <div class="exp-role">Art Coach Volunteer</div>
+        <ul class="exp-bullets">
+          <li>Created child-led lesson plans for art education program.</li>
+        </ul>
+        <div class="award-badge">🏆 Best Intern — Art Coach Program</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -439,9 +479,65 @@ footer a:hover{opacity:.7}
 
 <div class="divider"></div>
 
+<!-- ─── EDUCATION ─── -->
+<div class="sec-wrap" id="education">
+  <div class="sec-label reveal" data-num="06">Education</div>
+  <h2 class="reveal d1">Academic<br/><em>Background</em></h2>
+  <div class="edu-list">
+    <div class="edu-item reveal d1">
+      <div class="edu-meta">
+        <div class="edu-year">2024 – 2028</div>
+        <div class="edu-inst">University of Management and Technology</div>
+      </div>
+      <div class="edu-body">
+        <div class="edu-degree">BSc Computer Science</div>
+        <div class="edu-detail">CGPA: <span class="about-highlight">3.63 / 4.0</span></div>
+      </div>
+    </div>
+    <div class="edu-item reveal d2">
+      <div class="edu-meta">
+        <div class="edu-year">2022 – 2024</div>
+        <div class="edu-inst">Lahore College of Arts and Sciences (LACAS)</div>
+      </div>
+      <div class="edu-body">
+        <div class="edu-degree">A-Levels (CAIEs)</div>
+        <div class="edu-detail">Computer Science · Physics · Law · Global Perspectives &amp; Research</div>
+      </div>
+    </div>
+    <div class="edu-item reveal d3">
+      <div class="edu-meta">
+        <div class="edu-year">2019 – 2022</div>
+        <div class="edu-inst">American Lyceum International School</div>
+      </div>
+      <div class="edu-body">
+        <div class="edu-degree">O-Levels (CAIEs)</div>
+        <div class="edu-detail">5 A's &amp; 3 B's</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── ACHIEVEMENTS ─── -->
+<div class="sec-wrap" id="achievements">
+  <div class="sec-label reveal" data-num="07">Achievements</div>
+  <h2 class="reveal d1">Beyond<br/><em>The Code</em></h2>
+  <div class="achieve-grid">
+    <div class="achieve-card reveal d1"><div class="achieve-icon">🏆</div><div class="achieve-text">Best Intern — Digifloat LLC &amp; LACAS Art Coach Program</div></div>
+    <div class="achieve-card reveal d2"><div class="achieve-icon">📝</div><div class="achieve-text">Research Paper Author — "Will AI Surpass Human Intelligence?"</div></div>
+    <div class="achieve-card reveal d3"><div class="achieve-icon">📰</div><div class="achieve-text">EVOKE Magazine Editor — designed and managed editorial content</div></div>
+    <div class="achieve-card reveal d4"><div class="achieve-icon">🎙️</div><div class="achieve-text">Voice-over Artist — Lyceum Education App</div></div>
+    <div class="achieve-card reveal d5"><div class="achieve-icon">🌍</div><div class="achieve-text">LACAS MUN Socials Team · NSBP Qualifier · Debating Competitor</div></div>
+    <div class="achieve-card reveal d6"><div class="achieve-icon">🎨</div><div class="achieve-text">Toyota Dream Car Contest Winner · IKLC 2× Key to Success · Unique Aerobics Championship 2015</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <!-- ─── CONTACT ─── -->
 <div class="sec-wrap" id="contact">
-  <div class="sec-label reveal" data-num="06">Contact</div>
+  <div class="sec-label reveal" data-num="08">Contact</div>
   <h2 class="reveal d1">Let's<br/><em>Connect</em></h2>
   <div class="contact-inner">
     <div class="contact-text reveal-left d2">
