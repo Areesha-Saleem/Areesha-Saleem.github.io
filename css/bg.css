@@ -1,0 +1,74 @@
+/* ============================================================
+   CODER BACKGROUND IMAGES
+   Two translucent screenshots (n8n workflow + VS Code) that
+   float behind all content to reinforce the "builder" identity.
+   ============================================================ */
+
+.bg-coder-layer {
+  position:       fixed;
+  inset:          0;
+  pointer-events: none;
+  z-index:        0;
+  overflow:       hidden;
+}
+
+.bg-img {
+  position:      absolute;
+  border-radius: 16px;
+  opacity:       0;
+  transition:    opacity 3s ease;
+  display:       block;
+}
+
+.bg-img.loaded { opacity: 1; }
+
+/* n8n workflow diagram — top-right */
+.bg-img-1 {
+  top:    -30px;
+  right:  -80px;
+  width:  58vw;
+  max-width: 850px;
+  transform: rotate(-4deg) scale(1.04);
+  filter: blur(2px) saturate(0.25) brightness(0.22) hue-rotate(10deg);
+  mix-blend-mode: screen;
+  animation: bgDrift1 28s ease-in-out infinite;
+  border: 1px solid rgba(0,201,177,0.06);
+}
+
+/* VS Code python — bottom-left */
+.bg-img-2 {
+  bottom: -40px;
+  left:   -50px;
+  width:  44vw;
+  max-width: 700px;
+  transform: rotate(2.5deg);
+  filter: blur(2px) saturate(0.2) brightness(0.2) hue-rotate(170deg);
+  mix-blend-mode: screen;
+  animation: bgDrift2 35s ease-in-out infinite;
+  border: 1px solid rgba(123,94,167,0.06);
+}
+
+/* Scanline texture overlay */
+.bg-coder-layer::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,201,177,0.015) 3px,
+    rgba(0,201,177,0.015) 4px
+  );
+  pointer-events: none;
+}
+
+@keyframes bgDrift1 {
+  0%,  100% { transform: rotate(-4deg) scale(1.04) translate(0, 0);     }
+  30%       { transform: rotate(-3deg) scale(1.05) translate(-20px, 12px); }
+  70%       { transform: rotate(-5deg) scale(1.03) translate(15px, -10px); }
+}
+
+@keyframes bgDrift2 {
+  0%,  100% { transform: rotate(2.5deg)  translate(0, 0);     }
+  50%       { transform: rotate(1.8deg)  translate(18px, -20px); }
+}
