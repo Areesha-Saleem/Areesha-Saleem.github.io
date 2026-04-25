@@ -425,9 +425,9 @@ footer a:hover{opacity:.7}
     </div>
     <div class="about-stats reveal-right d2">
       <div class="stat-card"><div class="stat-num" data-target="3.63" data-dec="2">0</div><div class="stat-label">CGPA / 4.0</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="8" data-dec="0">0</div><div class="stat-label">Projects Built</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="10" data-dec="0" data-suffix="+">0</div><div class="stat-label">Projects Built &amp; Counting</div></div>
       <div class="stat-card"><div class="stat-num" data-target="4" data-dec="0">0</div><div class="stat-label">Internships</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="6" data-dec="0">0</div><div class="stat-label">Certifications</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="6" data-dec="0" data-suffix="+">0</div><div class="stat-label">Certifications &amp; Growing</div></div>
     </div>
   </div>
 </div>
@@ -526,6 +526,10 @@ footer a:hover{opacity:.7}
     <div class="project-card reveal d2"><div class="project-num">06</div><div class="project-title">Chest X-Ray AI Diagnostic Tool</div><p class="project-desc">CNN-based AI tool for automated pneumonia detection from chest X-rays with preprocessing, augmentation, and evaluation pipelines.</p><div class="project-stack"><span class="stack-pill">PyTorch</span><span class="stack-pill">CNNs</span><span class="stack-pill">Python</span></div></div>
     <div class="project-card reveal d3"><div class="project-num">07</div><div class="project-title">Movie Recommendation System</div><p class="project-desc">Content-based filtering with TF-IDF vectorization and cosine similarity on TMDb/IMDb datasets.</p><div class="project-stack"><span class="stack-pill">Python</span><span class="stack-pill">Pandas</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">NLP</span></div></div>
     <div class="project-card reveal d4"><div class="project-num">08</div><div class="project-title">Online Voting System</div><p class="project-desc">Console-based CNIC-authenticated voting system demonstrating OOP principles with persistent file storage.</p><div class="project-stack"><span class="stack-pill">C++</span><span class="stack-pill">OOP</span><span class="stack-pill">File Handling</span></div></div>
+    <div class="project-card reveal d1"><div class="project-num">09</div><div class="project-title">Voice Agent System</div><p class="project-desc">Production-grade AI voice agent handling inbound/outbound calls via Twilio and WhatsApp Business API (WABA). Integrates ElevenLabs for ultra-realistic voice synthesis, Flowise for RAG-powered conversation logic, and n8n for end-to-end workflow orchestration — enabling 24/7 automated customer interaction.</p><div class="project-stack"><span class="stack-pill">Twilio</span><span class="stack-pill">WABA</span><span class="stack-pill">ElevenLabs</span><span class="stack-pill">Flowise</span><span class="stack-pill">n8n</span></div></div>
+    <div class="project-card reveal d2"><div class="project-num">10</div><div class="project-title">Multilingual OCR on National Documents</div><p class="project-desc">Deep learning pipeline for automated data extraction from Pakistani national documents — CNICs, stamp papers, and NOCs. Uses YOLOv8 for document region detection, PaddleOCR and Qaari OCR for Urdu/Arabic/English text recognition, and PIL-based preprocessing. Handles skewed, low-res scans with high accuracy across multiple languages.</p><div class="project-stack"><span class="stack-pill">PaddleOCR</span><span class="stack-pill">Qaari OCR</span><span class="stack-pill">YOLOv8</span><span class="stack-pill">PIL</span><span class="stack-pill">Deep Learning</span><span class="stack-pill">Python</span></div></div>
+    <div class="project-card reveal d3"><div class="project-num">11</div><div class="project-title">AI Lead Follow-Up Agent</div><p class="project-desc">Fully automated lead nurturing agent built on n8n. Tracks lead status from CRM triggers, sends personalised follow-up messages via email and WhatsApp at optimal intervals, uses AI to tailor messaging tone based on lead behaviour, and escalates hot leads to human reps — reducing response time and increasing conversion rates.</p><div class="project-stack"><span class="stack-pill">n8n</span><span class="stack-pill">OpenAI API</span><span class="stack-pill">CRM Integration</span><span class="stack-pill">WhatsApp API</span><span class="stack-pill">Gmail API</span></div></div>
+    <div class="project-card reveal d4"><div class="project-num">12</div><div class="project-title">AI Customer Proposal Generator</div><p class="project-desc">Intelligent proposal automation system powered by n8n and LLMs. Ingests client requirements from forms or emails, uses AI to generate structured, branded proposals with dynamic pricing sections, exports to PDF/DOCX, and sends directly to clients — cutting proposal turnaround from hours to minutes.</p><div class="project-stack"><span class="stack-pill">n8n</span><span class="stack-pill">OpenAI API</span><span class="stack-pill">LLM Integration</span><span class="stack-pill">PDF Generation</span><span class="stack-pill">REST APIs</span></div></div>
   </div>
 </div>
 
@@ -656,7 +660,7 @@ document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.
 
 const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
   const el=e.target,t=parseFloat(el.dataset.target),d=parseInt(el.dataset.dec||0),start=performance.now();
-  (function step(now){const p=Math.min((now-start)/1400,1),ease=1-Math.pow(1-p,4);el.textContent=(t*ease).toFixed(d);if(p<1)requestAnimationFrame(step)})(performance.now());
+  (function step(now){const p=Math.min((now-start)/1400,1),ease=1-Math.pow(1-p,4);const suffix=el.dataset.suffix||"";el.textContent=(t*ease).toFixed(d)+suffix;if(p<1)requestAnimationFrame(step)})(performance.now());
   cObs.unobserve(el);
 }})},{threshold:.5});
 document.querySelectorAll('.stat-num[data-target]').forEach(el=>cObs.observe(el));
