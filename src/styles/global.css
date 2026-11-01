@@ -741,60 +741,21 @@ html.has-cursor button {
   position: relative;
   width: min(100%, 380px);
 }
-.photo-halo {
-  position: absolute;
-  inset: -40px;
-  border-radius: 50%;
-  background: conic-gradient(from var(--angle), var(--rose), var(--maroon), var(--wine), var(--glint), var(--rose));
-  filter: blur(60px);
-  opacity: 0.4;
-  animation: spin 9s linear infinite;
-}
-@keyframes spin {
-  to {
-    --angle: 360deg;
-  }
-}
 .photo-frame {
-  position: relative;
   aspect-ratio: 4 / 5;
-  border-radius: 999px 999px 32px 32px;
-  padding: 3px;
-  background: conic-gradient(from var(--angle), var(--rose), var(--maroon), var(--wine), var(--glint), var(--rose));
-  animation: spin 6s linear infinite;
-  box-shadow: 0 30px 80px -20px rgba(155, 28, 53, 0.6);
-}
-.photo-clip {
   width: 100%;
-  height: 100%;
   overflow: hidden;
-  border-radius: 999px 999px 29px 29px;
+  border: 1px solid rgba(238, 204, 211, 0.3);
+  border-radius: 12px;
   background: var(--bg-2);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
 }
-.photo-clip img {
+.photo-frame img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
   object-position: 54% 22%;
-}
-.photo-shine {
-  position: absolute;
-  inset: 3px;
-  border-radius: inherit;
-  overflow: hidden;
-  pointer-events: none;
-}
-.photo-shine::after {
-  content: "";
-  position: absolute;
-  top: -20%;
-  bottom: -20%;
-  width: 35%;
-  left: -60%;
-  transform: skewX(-20deg);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  animation: sweep 5s ease-in-out infinite;
 }
 .float-badge {
   position: absolute;
@@ -1650,5 +1611,3 @@ a.visit:hover svg {
   animation: none;
 }
 .hero-name .last { color: var(--text); }
-.photo-halo { opacity: 0.35; animation: none; }
-.photo-shine { display: none; }

@@ -99,17 +99,13 @@ export default function Hero() {
 
         <motion.div
           className="hero-right"
-          initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="photo-wrap">
-            <div className="photo-halo" />
             <div className="photo-frame">
-              <div className="photo-clip">
-                <img src="/assets/areesha.jpg" alt="Areesha Saleem" />
-              </div>
-              <span className="photo-shine" />
+              <img src="/assets/areesha.jpg" alt="Areesha Saleem" />
             </div>
           </div>
         </motion.div>
